@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic Result</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f2f5f9;color:#172033}
+header{background:#1267b1;color:#fff;padding:20px;text-align:center;font-size:26px;font-weight:700}
+.container{max-width:850px;margin:35px auto;padding:16px}
+.card{background:#fff;border-radius:14px;padding:26px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+h2{text-align:center;margin:0 0 22px}
+.field{margin:16px 0}
+label{display:block;font-weight:700;margin-bottom:7px}
+input,select{width:100%;padding:13px;border:1px solid #ccd5df;border-radius:8px;font-size:15px}
+button{width:100%;padding:14px;border:0;border-radius:8px;background:#1769aa;color:white;font-size:16px;font-weight:700;cursor:pointer}
+button:hover{background:#12588e}
+.result{display:none;margin-top:28px;text-align:center}
+.result img{max-width:100%;height:auto;border:1px solid #ddd;border-radius:8px}
+.notice{font-size:12px;color:#667085;text-align:center;margin-top:18px}
+</style>
+</head>
+<body>
+<header>Academic Result</header>
+<div class="container">
+<div class="card">
+<h2>Academic Result</h2>
+<div class="field">
+<label for="studentId">Student ID</label>
+<input id="studentId" type="text" placeholder="Enter Student ID">
+</div>
+<div class="field">
+<label for="semester">Semester</label>
+<select id="semester">
+<option value="">Select Semester</option>
+<option>Spring 2026</option>
+<option>Summer 2026</option>
+<option>Fall 2026</option>
+</select>
+</div>
+<button onclick="showResult()">SHOW RESULT</button>
+
+<div id="result" class="result">
+<h3>Result</h3>
+<img src="result.jpeg" alt="Academic Result">
+</div>
+<p class="notice">Unofficial result display page. The form does not verify student records.</p>
+</div>
+</div>
+
+<script>
+function showResult(){
+ const id=document.getElementById('studentId').value.trim();
+ const semester=document.getElementById('semester').value;
+ if(!id || !semester){
+   alert('Please enter Student ID and select Semester.');
+   return;
+ }
+ document.getElementById('result').style.display='block';
+}
+</script>
+</body>
+</html>
